@@ -1,0 +1,13 @@
+
+These are steps needed to make it work for windows authentication. Do this only in CRM development server. To complete development without deploying to CRM.
+
+1) Enable cors on CRM server IIS.
+  a) Add HTTP header
+    Access-Control-Allow-Credentials   Value: true
+    Access-Control-Allow-Origin Value: http://localhost:4200 (Default for angular- DON'T ADD this).
+ 2) Update this line in XrmService.
+    let options = new RequestOptions({ headers: headers, withCredentials:true });
+
+
+Run it: ng serve .it works
+    
